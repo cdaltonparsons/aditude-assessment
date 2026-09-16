@@ -32,7 +32,7 @@ The app will start but most functionality is stubbed out — that's intentional.
 | `npm run dev` | Start development server on port 3000 |
 | `npm run build` | Build for production |
 
-Database setup is not included in this scaffold — choose and configure your preferred database and ORM.
+Database setup uses Prisma + SQLite — run `npm run setup` to generate the client, then `npm run db:push` and `npm run db:seed` once your schema and seed script exist.
 
 ---
 
@@ -58,4 +58,4 @@ Database setup is not included in this scaffold — choose and configure your pr
 - **Framework:** Next.js 14 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
-- **Database:** Your choice — use whatever you're comfortable with
+- **Database:** Prisma + SQLite (pre-wired — see `package.json` scripts and `example.env`)

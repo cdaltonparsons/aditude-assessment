@@ -6,6 +6,12 @@ Welcome. This is a Next.js 14 application scaffold for a multi-tenant publisher 
 
 You are encouraged to use AI tools. How you prompt them, verify their output, and reason about the results is part of what we're evaluating.
 
+**Please preserve your AI conversation history so we can review it together in the follow-up.**
+
+- If you're using Claude Code: run `/export` before you finish (or once per session if you restart), and save the result into an `ai-transcripts/` folder at the repo root — e.g. `ai-transcripts/part-1-schema.md`. Commit these files like any other.
+- If you're using a different tool (ChatGPT, Copilot Chat, Cursor, etc.): copy or export the conversation as markdown/text into the same `ai-transcripts/` folder, named by tool.
+- Don't clear your session before exporting — we'll ask to see it in the follow-up.
+
 Time estimates are approximate — prioritize breadth over perfection.
 
 You have 1.5 hours to build what you need. After that time there will be a 1-hour follow-up interview where we'll review your work, ask questions, and build upon what you've created.
@@ -14,7 +20,7 @@ You have 1.5 hours to build what you need. After that time there will be a 1-hou
 
 ## Part 1 — Database Design
 
-Choose your own database and ORM — use whatever you're most comfortable with.
+This scaffold is pre-wired for **Prisma with SQLite** (see `package.json` scripts and `example.env`) — use that setup so your schema can be run and reviewed consistently.
 
 The system needs to support:
 - **Organizations** that have multiple publishers
@@ -47,7 +53,7 @@ Implement the API routes
 		- any publisher-specific permissions the user holds
 	- the organization name and basic metadata
 - [ ] Provide a UI on the organization page to create a new publisher.
-- [ ] Provide a UI on the organization page to add a user: allow creating a user, assigning a system-level role (regular user or), and granting the user access to one or more publishers with specific publisher-level permissions.
+- [ ] Provide a UI on the organization page to add a user: allow creating a user, assigning a system-level role (regular user or system admin), and granting the user access to one or more publishers with specific publisher-level permissions.
 - [ ] Add loading states for the dashboard and organization pages while data is fetching, and display clear error messages when requests fail.
 - [ ] Make the UI responsive and accessible; prefer simple, testable components so reviewers can verify behavior quickly.
 
@@ -60,3 +66,5 @@ Be ready to walk through:
 2. Any issues you found in the existing code
 3. What you would change with more time
 4. How you would add authentication to this app
+5. How your API guarantees one organization can never see or modify another's data
+6. Your AI conversation history — how you prompted, what you double-checked, and anywhere the AI got it wrong
